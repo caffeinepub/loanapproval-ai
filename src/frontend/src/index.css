@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 97.2 0.005 220;
+    --foreground: 18 0.012 250;
+    --card: 100 0 0;
+    --card-foreground: 18 0.012 250;
+    --popover: 100 0 0;
+    --popover-foreground: 18 0.012 250;
+    --primary: 49 0.11 155;
+    --primary-foreground: 100 0 0;
+    --secondary: 88 0.01 220;
+    --secondary-foreground: 18 0.012 250;
+    --muted: 93 0.007 220;
+    --muted-foreground: 43 0.02 250;
+    --accent: 47 0.08 206;
+    --accent-foreground: 100 0 0;
+    --destructive: 48 0.2 27;
+    --destructive-foreground: 100 0 0;
+    --success: 49 0.11 155;
+    --warning: 75 0.18 80;
+    --border: 88 0.01 220;
+    --input: 88 0.01 220;
+    --ring: 49 0.11 155;
+    --radius: 0.75rem;
+    --navy: 25 0.1 248;
+    --teal: 38 0.08 206;
+    --green: 49 0.11 155;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.25 0.1 248) 0%,
+      oklch(0.38 0.08 206) 50%,
+      oklch(0.47 0.1 168) 100%
+    );
+  }
+  .btn-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.49 0.11 155) 0%,
+      oklch(0.25 0.1 248) 100%
+    );
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.49 0.11 155),
+      oklch(0.38 0.08 206)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
