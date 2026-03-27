@@ -6,31 +6,44 @@
 
 @layer base {
   :root {
-    --background: 97.2 0.005 220;
+    /* Page background: #F2F5F8 */
+    --background: 97.2 0.008 220;
+    /* Text primary: #111827 */
     --foreground: 18 0.012 250;
+    /* Cards: white */
     --card: 100 0 0;
     --card-foreground: 18 0.012 250;
     --popover: 100 0 0;
     --popover-foreground: 18 0.012 250;
-    --primary: 49 0.11 155;
+    /* Primary accent: #1F63B5 / #2B6CB0 */
+    --primary: 47 0.16 260;
     --primary-foreground: 100 0 0;
-    --secondary: 88 0.01 220;
+    /* Secondary: soft blue-gray */
+    --secondary: 90 0.01 220;
     --secondary-foreground: 18 0.012 250;
-    --muted: 93 0.007 220;
-    --muted-foreground: 43 0.02 250;
-    --accent: 47 0.08 206;
-    --accent-foreground: 100 0 0;
+    /* Muted */
+    --muted: 94 0.006 220;
+    --muted-foreground: 52 0.016 252;
+    /* Accent */
+    --accent: 90 0.012 220;
+    --accent-foreground: 18 0.012 250;
+    /* Destructive: red */
     --destructive: 48 0.2 27;
     --destructive-foreground: 100 0 0;
-    --success: 49 0.11 155;
-    --warning: 75 0.18 80;
-    --border: 88 0.01 220;
-    --input: 88 0.01 220;
-    --ring: 49 0.11 155;
-    --radius: 0.75rem;
-    --navy: 25 0.1 248;
-    --teal: 38 0.08 206;
-    --green: 49 0.11 155;
+    /* Borders */
+    --border: 90 0.008 220;
+    --input: 90 0.008 220;
+    --ring: 47 0.16 260;
+    --radius: 0.625rem;
+    /* Custom */
+    --navy: 23 0.075 248;
+    --navy-dark: 18 0.08 248;
+    --success-bg: 93 0.06 155;
+    --success-text: 43 0.14 155;
+    --warning-bg: 92 0.08 80;
+    --warning-text: 52 0.16 80;
+    --danger-bg: 93 0.05 27;
+    --danger-text: 43 0.18 27;
   }
 
   * {
@@ -39,35 +52,36 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer utilities {
-  .hero-gradient {
+  .nav-bg {
     background: linear-gradient(
-      135deg,
-      oklch(0.25 0.1 248) 0%,
-      oklch(0.38 0.08 206) 50%,
-      oklch(0.47 0.1 168) 100%
+      90deg,
+      oklch(0.23 0.075 248) 0%,
+      oklch(0.27 0.07 248) 100%
     );
   }
-  .btn-gradient {
-    background: linear-gradient(
-      135deg,
-      oklch(0.49 0.11 155) 0%,
-      oklch(0.25 0.1 248) 100%
-    );
+  .btn-primary {
+    background: oklch(0.47 0.16 260);
+    color: white;
   }
-  .text-gradient {
-    background: linear-gradient(
-      135deg,
-      oklch(0.49 0.11 155),
-      oklch(0.38 0.08 206)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .btn-primary:hover {
+    background: oklch(0.43 0.16 260);
+  }
+  .status-approved {
+    background-color: oklch(0.93 0.06 155);
+    color: oklch(0.43 0.14 155);
+  }
+  .status-review {
+    background-color: oklch(0.92 0.08 80);
+    color: oklch(0.52 0.16 80);
+  }
+  .status-denied {
+    background-color: oklch(0.93 0.05 27);
+    color: oklch(0.43 0.18 27);
   }
 }
